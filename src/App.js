@@ -10,7 +10,16 @@ const App = () => {
     for (let i = 0; i < tasks.length; i++) {
       listItems.push(
         <div className="listItems">
-          <span className="croix">☓</span>
+          <span
+            className="croix"
+            onClick={() => {
+              const newTasks3 = [...tasks];
+              newTasks3.splice(i, 1);
+              setTasks(newTasks3);
+            }}
+          >
+            ☓
+          </span>
           <span
             className={tasks[i].isDone === true ? "item" : "itembarre"}
             onClick={() => {
